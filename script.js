@@ -81,8 +81,8 @@ function filterProjects(filter) {
     });
 
     projectCards.forEach(card => {
-        const category = card.dataset.category;
-        if (filter === 'all' || category === filter) {
+        const categories = card.dataset.category.split(' ');
+        if (filter === 'all' || categories.includes(filter)) {
             card.style.display = 'block';
             card.classList.add('fade-in');
         } else {
